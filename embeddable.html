@@ -43,7 +43,7 @@ searchBar.addEventListener('input', (e) => {
 });
 
 // Fetch the games data from a JSON file
-fetch('https://cdn.jsdelivr.net/gh/DapperLS-Bot-Dev/3kh0.NET@main/assets/json/games.json')
+fetch('https://raw.githack.com/3kh0/website-v4/main/assets/json/games.json')
   .then((res) => res.json())
   .then((games) => {
     // Loop through each game and create a new game element for it
@@ -60,7 +60,7 @@ fetch('https://cdn.jsdelivr.net/gh/DapperLS-Bot-Dev/3kh0.NET@main/assets/json/ga
         gameContainer.classList.remove('hidden');
         document.querySelector('.saveItems').classList.add('hidden');
         document.querySelector('.navbar').classList.add('noshadow');
-        gameFrame.querySelector('iframe').src = `./assets/game?game=${game.root}`;
+        gameFrame.querySelector('iframe').src = cdn + `${game.root}/${game.index}`;
         gameNav.querySelector('span').textContent = game.name;
       };
 
